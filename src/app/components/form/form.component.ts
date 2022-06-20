@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/interfaces/user';
+import { ActionsService } from 'src/app/services/actions.service';
 import { UserDetailsService } from 'src/app/services/user-details.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserDetailsService } from 'src/app/services/user-details.service';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
-  constructor(private snackBar: MatSnackBar, private errorSnackbar: MatSnackBar, private userDetailsService: UserDetailsService) { }
+  constructor(private snackBar: MatSnackBar, private errorSnackbar: MatSnackBar, private userDetailsService: UserDetailsService, private actionsService: ActionsService) { }
 
   name: string;
   surname: string;
@@ -38,6 +39,7 @@ export class FormComponent {
     try {
       this.openSnackBar();
       this.userDetailsService.addUser(data);
+      this.actionsService.addAction({ type: 'user-added', time: new Date(), user: data });
 
       this.clearAreas();
     } catch (error) {

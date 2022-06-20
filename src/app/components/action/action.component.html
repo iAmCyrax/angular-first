@@ -1,11 +1,14 @@
 <mat-card>
-    <mat-card-title>{{ action.type | supertitle }} Action</mat-card-title>
+    <mat-card-title>{{ action.type | supertitle }}</mat-card-title>
     <mat-card-content>
         <p>
             Date: {{ toDate() }}
         </p>
-        <p *ngIf="(action.type === 'login-error' || action.type === 'login') && action.password">
-            Password: {{ hide ? (action.password | password) : action.password }} <button (click)="toggleHiding()"
+        <p *ngIf="action.type === 'user-added' || action.type === 'user-deleted'">
+            {{action.user!.name}} {{action.user!.surname}}
+        </p>
+        <p *ngIf="action.type === 'login-error' || action.type === 'login'">
+            Password: {{ hide ? (action.password! | password) : action.password }} <button (click)="toggleHiding()"
                 mat-icon-button>
                 <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
             </button> <span *ngIf="action.type === 'login'">(Success)</span>
