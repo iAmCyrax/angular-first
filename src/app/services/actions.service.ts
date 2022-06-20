@@ -5,6 +5,7 @@ import { Action } from '../interfaces/actions';
   providedIn: 'root'
 })
 export class ActionsService {
+  // TODO: User eklenmesiyle de yeni action eklenebilir...
   actions: Action[] = [];
 
   addAction(action: Action) {
