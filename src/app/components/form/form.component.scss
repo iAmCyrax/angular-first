@@ -1,0 +1,15 @@
+.form {
+  justify-content: center;
+
+  &-field {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+  }
+}
+
+textarea {
+  height: 170px !important;
+  resize: none !important;
+  height: 100px;
+}

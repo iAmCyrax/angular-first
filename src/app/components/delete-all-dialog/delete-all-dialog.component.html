@@ -1,0 +1,5 @@
+<h3 mat-dialog-title>Are you sure to delete ALL the users' ({{ data.userDetailsService.users.length }}) datas?</h3>
+<div mat-dialog-actions>
+    <button mat-flat-button color="warn" (click)="deleteAllUsers()" mat-dialog-close>DELETE</button>
+    <button mat-flat-button color="accent" mat-dialog-close>CANCEL</button>
+</div>

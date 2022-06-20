@@ -1,0 +1,1 @@
+export const generateDate = (date: Date) => `${date.getDate()}.${date.getMonth().toString().length === 1 ? '0' : ''}${date.getMonth()}.${date.getFullYear()} ${date.getHours()}.${date.getMinutes().toString().length === 1 ? '0' : ''}${date.getMinutes()}`;

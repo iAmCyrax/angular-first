@@ -1,0 +1,29 @@
+<h2>Contact me</h2>
+
+<form class="form-container">
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Email address</mat-label>
+    <input type="email" [(ngModel)]="email" [ngModelOptions]="{ standalone: true }" matInput email>
+  </mat-form-field>
+
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Name</mat-label>
+    <input [(ngModel)]="name" [ngModelOptions]="{ standalone: true }" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Surname</mat-label>
+    <input [(ngModel)]="surname" [ngModelOptions]="{ standalone: true }" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Your message</mat-label>
+    <textarea maxlength="500" [(ngModel)]="message" [ngModelOptions]="{ standalone: true }" matInput #area></textarea>
+    <mat-hint align="end">{{ area.value?.length || 0 }}/500</mat-hint>
+  </mat-form-field>
+
+  <button (click)="onSubmit()" mat-flat-button color="accent">
+    <mat-icon>send</mat-icon>
+    Send message
+  </button>
+</form>

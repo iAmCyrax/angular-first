@@ -1,0 +1,11 @@
+<h3 mat-dialog-title>Please type your password as an admin...</h3>
+<div mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-flat-button color="accent" (click)="login()">LOGIN</button>
+    <button mat-flat-button color="warn" (click)="goHome()">CANCEL</button>
+</div>

@@ -1,0 +1,20 @@
+@import '@angular/material/theming';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+img,
+svg {
+  vertical-align: baseline;
+}
+
+$custom-typography: mat-typography-config($font-family: '"Google Sans", "Roboto", sans-serif'
+  );
+
+@include angular-material-typography($custom-typography);

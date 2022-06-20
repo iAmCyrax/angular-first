@@ -1,0 +1,34 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.pages-container {
+    margin-left: 4px;
+}
+
+.pages {
+    display: flex;
+}
+
+.page {
+    color: inherit;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
+.title {
+    cursor: pointer;
+}
+
+.sidenav-container {
+    height: 100%;
+}
+
+.grid-container {
+    margin: 20px;
+    // padding-bottom: 84.3vh;
+}
+
+.link:hover {
+    color: inherit;
+}

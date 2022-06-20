@@ -1,0 +1,13 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>{{ user.name }} {{ user.surname }}</mat-card-title>
+        <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{ user.message }}</p>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions align="start" class="actions">
+        <button mat-flat-button color="warn" (click)="openDialog()">Delete User</button>
+    </mat-card-actions>
+</mat-card>

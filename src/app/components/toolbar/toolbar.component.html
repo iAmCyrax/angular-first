@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <span routerLink="/" class="title">Angular First Web App</span>
+            <div class="pages-container">
+                <mat-list class="pages" role="list">
+                    <!-- <span *ngFor="let route of routes"> -->
+                        <!-- <mat-list-item class="page" role="listitem" *ngIf="route.title && route.path !== '**' && route.path !== 'easter-egg'"
+                            routerLink="/{{ route.path }}">
+                            {{ route.title }}
+                        </mat-list-item> -->
+                        <mat-list-item class="page" role="listitem" routerLink="/">Home</mat-list-item>
+                        <mat-list-item class="page" role="listitem" routerLink="/about">About</mat-list-item>
+                        <mat-list-item class="page" role="listitem" routerLink="/dashboard">Dashboard</mat-list-item>
+                    <!-- </span> -->
+                </mat-list>
+            </div>
+            <span class="spacer"></span>
+            <a class="link" target="_blank" href="https://twitter.com/ahmetgibidir" mat-icon-button>
+                <mat-icon svgIcon="twitter"></mat-icon>
+            </a>
+            <a class="link" target="_blank" href="https://github.com/iAmCyrax" mat-icon-button>
+                <mat-icon svgIcon="github"></mat-icon>
+            </a>
+            <button (click)="logOut()" mat-icon-button *ngIf="loggedService.isLogged">
+                <mat-icon>logout</mat-icon>
+            </button>
+        </mat-toolbar>
+        <div class="grid-container">
+            <ng-content></ng-content>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
