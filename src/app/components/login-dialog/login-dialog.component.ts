@@ -36,9 +36,9 @@ export class LoginDialogComponent implements OnInit {
       this.snackBar.open("Please type your password or click \"CANCEL\" button.", "OK", { duration: 3000 });
       return;
     } else {
+      this.actionsService.addAction({ password: this.password, type: 'login-error', time: date });
       this.password = '';
       this.snackBar.open("The password is wrong. Please try again.", "OK", { duration: 3000 });
-      this.actionsService.addAction({ password: this.password, type: 'login-error', time: date });
     }
   }
 

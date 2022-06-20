@@ -14,6 +14,10 @@ svg {
   vertical-align: baseline;
 }
 
+.row {
+  width: 99.9999%;
+}
+
 $custom-typography: mat-typography-config($font-family: '"Google Sans", "Roboto", sans-serif'
   );
 
