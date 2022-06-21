@@ -11,7 +11,7 @@
             {{action.user!.name}} {{action.user!.surname}}
         </p>
         <p *ngIf="action.type === 'login-error' || action.type === 'login'">
-            Password: {{ hide ? (action.password! | password) : action.password }} <button (click)="toggleHiding()"
+            Password: {{ hide ? (action.password! | password) : action.password }} <button class="hide" (click)="toggleHiding()"
                 mat-icon-button>
                 <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
             </button> <span *ngIf="action.type === 'login'">(Success)</span>
