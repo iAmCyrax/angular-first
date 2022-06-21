@@ -30,8 +30,8 @@ export class FormComponent {
       return;
     }
 
-    if (this.userDetailsService.users.some(user => user.name === this.name && user.surname === this.surname)) {
-      this.errorSnackbar.open("This user was sended another message. Please send the message with another user name and surname.", "OK", { duration: 5000, horizontalPosition: 'start' });
+    if (this.userDetailsService.users.some(user => ((user.name === this.name && user.surname === this.surname) || user.email === this.email))) {
+      this.errorSnackbar.open("This user was sended another message. Please send the message with another user name and surname (or email).", "OK", { duration: 5000, horizontalPosition: 'start' });
       this.clearAreas();
       return;
     }

@@ -12,12 +12,13 @@ import { UserDetailsService } from 'src/app/services/user-details.service';
   styleUrls: ['./delete-dialog.component.scss']
 })
 export class DeleteDialogComponent implements OnInit {
+  deleteReason: string;
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private snackBar: MatSnackBar, private userDetailsService: UserDetailsService, private actionsService: ActionsService) { }
 
   deleteUser(user: User) {
     this.snackBar.open(`User (${user.name}) successfully deleted.`, undefined, { duration: 2000, horizontalPosition: 'start' });
     this.userDetailsService.removeUser(user);
-    this.actionsService.addAction({ type: 'user-deleted', time: new Date(), user: this.data.user });
+    this.actionsService.addAction({ type: 'user-deleted', time: new Date(), user: this.data.user, deleteReason: this.deleteReason });
   }
 
   ngOnInit(): void {

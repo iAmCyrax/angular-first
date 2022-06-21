@@ -4,6 +4,9 @@
         <p>
             Date: {{ toDate() }}
         </p>
+        <p *ngIf="action.deleteReason">
+            Reason: {{ action.deleteReason }}
+        </p>
         <p *ngIf="action.type === 'user-added' || action.type === 'user-deleted'">
             {{action.user!.name}} {{action.user!.surname}}
         </p>

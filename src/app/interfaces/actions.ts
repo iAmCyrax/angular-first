@@ -9,8 +9,9 @@ type ActionType = 'logout' |
     'all-users-deleted';
 
 export interface Action {
-    password?: string;
-    user?: User;
     time: Date;
     type: ActionType;
+    password?: string;
+    user?: User;
+    deleteReason?: string;
 }
