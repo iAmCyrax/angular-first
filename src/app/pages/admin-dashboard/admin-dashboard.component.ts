@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { LogoutDialogComponent } from 'src/app/components';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -9,12 +7,8 @@ import { LogoutDialogComponent } from 'src/app/components';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  logOut() {
-    this.dialog.open(LogoutDialogComponent);
   }
 }
