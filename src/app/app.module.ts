@@ -24,9 +24,10 @@ import {
 } from './components';
 import { HomeComponent, ErrorComponent, AboutComponent, AdminDashboardComponent } from './pages';
 import { LoggedService } from './services/logged.service';
+
 import { LoginGuard } from './guards/login.guard';
-import { SuperTitlePipe } from './pipes/super-title.pipe';
-import { PasswordPipe } from './pipes/password.pipe';
+
+import { PasswordPipe, SuperTitlePipe } from './pipes';
 
 @NgModule({
   declarations: [
