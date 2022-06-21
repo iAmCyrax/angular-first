@@ -25,7 +25,7 @@ export class FormComponent {
       email: this.email
     };
 
-    if (!this.name || !this.surname || !this.message) {
+    if (!this.name || !this.surname || !this.message || !this.email) {
       this.errorSnackbar.open("Please type blank areas", "OK", { duration: 2000, horizontalPosition: 'start' });
       return;
     }
