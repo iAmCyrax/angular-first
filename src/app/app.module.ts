@@ -20,7 +20,8 @@ import {
   LoginDialogComponent,
   LogoutDialogComponent,
   ActionsListComponent,
-  ActionComponent
+  ActionComponent,
+  DeleteAllActionsDialogComponent
 } from './components';
 import { HomeComponent, ErrorComponent, AboutComponent, AdminDashboardComponent } from './pages';
 import { LoggedService } from './services/logged.service';
@@ -46,6 +47,7 @@ import { PasswordPipe, SuperTitlePipe } from './pipes';
     LogoutDialogComponent,
     ActionsListComponent,
     ActionComponent,
+    DeleteAllActionsDialogComponent,
     SuperTitlePipe,
     PasswordPipe
   ],

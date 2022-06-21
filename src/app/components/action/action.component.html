@@ -8,11 +8,11 @@
             Reason: {{ action.deleteReason }}
         </p>
         <p *ngIf="action.type === 'user-added' || action.type === 'user-deleted'">
-            {{action.user!.name}} {{action.user!.surname}}
+            {{action.user!.name}} {{action.user!.surname}} <span *ngIf="action.user!.isTestUser">(Test User)</span>
         </p>
         <p *ngIf="action.type === 'login-error' || action.type === 'login'">
-            Password: {{ hide ? (action.password! | password) : action.password }} <button class="hide" (click)="toggleHiding()"
-                mat-icon-button>
+            Password: {{ hide ? (action.password! | password) : action.password }} <button class="hide"
+                (click)="toggleHiding()" mat-icon-button>
                 <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
             </button> <span *ngIf="action.type === 'login'">(Success)</span>
         </p>

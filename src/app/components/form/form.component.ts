@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/interfaces/user';
 import { ActionsService } from 'src/app/services/actions.service';
+import { LoggedService } from 'src/app/services/logged.service';
 import { UserDetailsService } from 'src/app/services/user-details.service';
 
 @Component({
@@ -10,19 +11,21 @@ import { UserDetailsService } from 'src/app/services/user-details.service';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
-  constructor(private snackBar: MatSnackBar, private errorSnackbar: MatSnackBar, private userDetailsService: UserDetailsService, private actionsService: ActionsService) { }
+  constructor(private snackBar: MatSnackBar, private errorSnackbar: MatSnackBar, private userDetailsService: UserDetailsService, private actionsService: ActionsService, public loggedService: LoggedService) { }
 
   name: string;
   surname: string;
   message: string;
   email: string;
+  isTestUser: boolean;
 
   onSubmit(): void {
     const data: User = {
       name: this.name,
       surname: this.surname,
       message: this.message,
-      email: this.email
+      email: this.email,
+      isTestUser: this.isTestUser
     };
 
     if (!this.name || !this.surname || !this.message || !this.email) {
@@ -51,6 +54,7 @@ export class FormComponent {
 
   clearAreas() {
     this.name = this.surname = this.message = this.email = "";
+    this.isTestUser = false;
   }
 
   openSnackBar(): void {

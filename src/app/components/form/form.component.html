@@ -1,6 +1,8 @@
 <h2>Contact me</h2>
 
 <form class="form-container">
+  <mat-slide-toggle *ngIf="loggedService.isLogged" class="slide-toggle" [(ngModel)]="isTestUser" [ngModelOptions]="{ standalone: true }">Test User</mat-slide-toggle>
+
   <mat-form-field class="form-field" appearance="outline">
     <mat-label>Email address</mat-label>
     <input type="email" [(ngModel)]="email" [ngModelOptions]="{ standalone: true }" matInput email>

@@ -3,4 +3,5 @@ export interface User {
     name: string;
     surname: string;
     message: string;
+    isTestUser?: boolean;
 }

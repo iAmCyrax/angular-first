@@ -4,3 +4,15 @@
     <app-action *ngFor="let action of actionsService.actions" [action]="action" class="col-sm-4 col-md-3 col-lg-3">
     </app-action>
 </div>
+
+<div class="delete-all" *ngIf="actionsService.actions.length > 0; else noActions">
+    <!-- <mat-divider></mat-divider> -->
+    <button class="delete-all-button" mat-flat-button color="warn" (click)="actionsService.clearActions()">
+        <mat-icon>delete</mat-icon>
+        Delete all actions
+    </button>
+</div>
+
+<ng-template #noActions>
+    <p>There is no actions there.</p>
+</ng-template>

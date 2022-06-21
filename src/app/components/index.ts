@@ -8,3 +8,4 @@ export { LoginDialogComponent } from './login-dialog/login-dialog.component';
 export { LogoutDialogComponent } from './logout-dialog/logout-dialog.component';
 export { ActionsListComponent } from './actions-list/actions-list.component';
 export { ActionComponent } from './action/action.component';
+export { DeleteAllActionsDialogComponent } from './delete-all-actions-dialog/delete-all-actions-dialog.component';
